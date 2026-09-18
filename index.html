@@ -7,11 +7,18 @@
 </head>
 <body style="background-color: #111; color: #fff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0;">
 
-    <!-- HEADER / NAVIGATION BAR -->
-    <header style="background-color: #e10600; padding: 20px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+    <!-- HEADER / TITLE -->
+    <header style="background-color: #e10600; padding: 20px 20px 10px 20px; text-align: center;">
         <h1 style="margin: 0; font-size: 2.5rem; letter-spacing: 2px; text-transform: uppercase;">🏎️ Slipstream Racing League</h1>
-        <p style="margin: 5px 0 0 0; font-style: italic; opacity: 0.9;">The Home Of Slipstream Racing League</p>
+        <p style="margin: 5px 0 15px 0; font-style: italic; opacity: 0.9;">Where loyalty ends and the slipstream begins</p>
     </header>
+
+    <!-- NAVIGATION MENU (BUTTONS) -->
+    <nav style="background-color: #1a1a1a; text-align: center; padding: 15px; border-bottom: 3px solid #e10600;">
+        <a href="index.html" style="color: #fff; background-color: #e10600; text-decoration: none; padding: 10px 20px; margin: 0 10px; font-weight: bold; border-radius: 4px; display: inline-block;">Home</a>
+        <a href="standings.html" style="color: #fff; background-color: #333; text-decoration: none; padding: 10px 20px; margin: 0 10px; font-weight: bold; border-radius: 4px; display: inline-block; transition: 0.2s;">Full Standings</a>
+        <a href="YOUR_DISCORD_LINK_HERE" target="_blank" style="color: #fff; background-color: #5865F2; text-decoration: none; padding: 10px 20px; margin: 0 10px; font-weight: bold; border-radius: 4px; display: inline-block;">Join Discord</a>
+    </nav>
 
     <!-- MAIN CONTENT CONTAINER -->
     <main style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
@@ -24,7 +31,7 @@
             </p>
         </section>
 
-        <!-- TWO COLUMN LAYOUT FOR SCHEDULE & STANDINGS -->
+        <!-- TWO COLUMN LAYOUT FOR SCHEDULE & QUICK STANDINGS -->
         <div style="display: flex; flex-wrap: wrap; gap: 30px;">
 
             <!-- LEFT COLUMN: RACE CALENDAR -->
@@ -46,39 +53,38 @@
                 </ul>
             </section>
 
-            <!-- RIGHT COLUMN: STANDINGS TABLE -->
+            <!-- RIGHT COLUMN: QUICK STANDINGS -->
             <section style="flex: 1.5; min-width: 300px; background-color: #1a1a1a; padding: 20px; border-radius: 8px;">
-                <h2 style="color: #e10600; border-bottom: 2px solid #333; padding-bottom: 10px; margin-top: 0;">🏆 Championship Standings</h2>
+                <h2 style="color: #e10600; border-bottom: 2px solid #333; padding-bottom: 10px; margin-top: 0;">🏆 Championship Top 3</h2>
                 <table style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 15px;">
                     <thead>
                         <tr style="background-color: #e10600; color: #fff;">
                             <th style="padding: 10px;">Pos</th>
                             <th style="padding: 10px;">Driver</th>
-                            <th style="padding: 10px;">Team</th>
                             <th style="padding: 10px;">Points</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr style="border-bottom: 1px solid #333; background-color: #222;">
-                            <td style="padding: 10px; font-weight: bold; color: #gold;">1</td>
+                            <td style="padding: 10px; font-weight: bold; color: gold;">1</td>
                             <td style="padding: 10px;">Driver_One</td>
-                            <td style="padding: 10px; color: #aaa;">Red Bull</td>
                             <td style="padding: 10px; font-weight: bold;">25</td>
                         </tr>
                         <tr style="border-bottom: 1px solid #333;">
-                            <td style="padding: 10px; font-weight: bold;">2</td>
+                            <td style="padding: 10px; font-weight: bold; color: silver;">2</td>
                             <td style="padding: 10px;">Driver_Two</td>
-                            <td style="padding: 10px; color: #aaa;">Ferrari</td>
                             <td style="padding: 10px; font-weight: bold;">18</td>
                         </tr>
                         <tr style="border-bottom: 1px solid #333; background-color: #222;">
-                            <td style="padding: 10px; font-weight: bold;">3</td>
+                            <td style="padding: 10px; font-weight: bold; color: #cd7f32;">3</td>
                             <td style="padding: 10px;">Driver_Three</td>
-                            <td style="padding: 10px; color: #aaa;">Mercedes</td>
                             <td style="padding: 10px; font-weight: bold;">15</td>
                         </tr>
                     </tbody>
                 </table>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="standings.html" style="color: #e10600; text-decoration: none; font-weight: bold;">View Full Standings Table →</a>
+                </div>
             </section>
 
         </div>
