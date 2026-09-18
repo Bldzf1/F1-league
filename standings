@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRL | Full Standings</title>
+</head>
+<body style="background-color: #111; color: #fff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0;">
+
+    <!-- HEADER -->
+    <header style="background-color: #e10600; padding: 20px 20px 10px 20px; text-align: center;">
+        <h1 style="margin: 0; font-size: 2.5rem; letter-spacing: 2px; text-transform: uppercase;">🏎️ Slipstream Racing League</h1>
+    </header>
+
+    <!-- NAV BAR -->
+    <nav style="background-color: #1a1a1a; text-align: center; padding: 15px; border-bottom: 3px solid #e10600;">
+        <a href="index.html" style="color: #fff; background-color: #333; text-decoration: none; padding: 10px 20px; margin: 0 10px; font-weight: bold; border-radius: 4px; display: inline-block;">Home</a>
+        <a href="standings.html" style="color: #fff; background-color: #e10600; text-decoration: none; padding: 10px 20px; margin: 0 10px; font-weight: bold; border-radius: 4px; display: inline-block;">Full Standings</a>
+        <a href="YOUR_DISCORD_LINK_HERE" target="_blank" style="color: #fff; background-color: #5865F2; text-decoration: none; padding: 10px 20px; margin: 0 10px; font-weight: bold; border-radius: 4px; display: inline-block;">Join Discord</a>
+    </nav>
+
+    <!-- CONTENT -->
+    <main style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
+        <section style="background-color: #1a1a1a; padding: 20px; border-radius: 8px;">
+            <h2 style="color: #e10600; border-bottom: 2px solid #333; padding-bottom: 10px; margin-top: 0;">🏆 Full Championship Standings</h2>
+            
+            <table style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 15px;">
+                <thead>
+                    <tr style="background-color: #e10600; color: #fff;">
+                        <th style="padding: 12px;">Pos</th>
+                        <th style="padding: 12px;">Driver</th>
+                        <th style="padding: 12px;">Team</th>
+                        <th style="padding: 12px;">Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Add your full grid list here -->
+                    <tr style="border-bottom: 1px solid #333; background-color: #222;">
+                        <td style="padding: 12px; font-weight: bold;">1</td>
+                        <td>Driver_One</td>
+                        <td style="color: #aaa;">Red Bull</td>
+                        <td style="font-weight: bold;">25</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #333;">
+                        <td style="padding: 12px; font-weight: bold;">2</td>
+                        <td>Driver_Two</td>
+                        <td style="color: #aaa;">Ferrari</td>
+                        <td style="font-weight: bold;">18</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #333; background-color: #222;">
+                        <td style="padding: 12px; font-weight: bold;">3</td>
+                        <td>Driver_Three</td>
+                        <td style="color: #aaa;">Mercedes</td>
+                        <td style="font-weight: bold;">15</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #333;">
+                        <td style="padding: 12px; font-weight: bold;">4</td>
+                        <td>Driver_Four</td>
+                        <td style="color: #aaa;">McLaren</td>
+                        <td style="font-weight: bold;">12</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #333; background-color: #222;">
+                        <td style="padding: 12px; font-weight: bold;">5</td>
+                        <td>Driver_Five</td>
+                        <td style="color: #aaa;">Aston Martin</td>
+                        <td style="font-weight: bold;">10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+</body>
+</html>
 
