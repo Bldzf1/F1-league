@@ -1,7 +1,36 @@
 /* =========================================
    SRL - BLUE / WHITE / BLACK THEME
    ========================================= */
+/* =========================================
+   SRL PROFESSIONAL LOGO
+   ========================================= */
 
+.srl-logo {
+    text-align: center;
+    line-height: 1;
+}
+
+.srl-main {
+    font-size: 3.2rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #ffffff;
+}
+
+.srl-sub {
+    margin-top: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 8px;
+    color: #dbe7ff;
+}
+
+header p {
+    margin-top: 18px;
+    font-size: 1rem;
+    color: #ffffff;
+    opacity: 0.9;
+}
 * {
     box-sizing: border-box;
 }
