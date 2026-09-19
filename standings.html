@@ -1,105 +1,119 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRL | Full Standings</title>
+    <title>SRL | Championship Standings</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: #111; color: #fff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0;">
 
-    <!-- HEADER -->
-    <header style="background-color: #e10600; padding: 20px 20px 10px 20px; text-align: center;">
-        <h1 style="margin: 0; font-size: 2.5rem; letter-spacing: 2px; text-transform: uppercase;">🏎️ Slipstream Racing League</h1>
-    </header>
+<body>
 
-    <!-- NAV BAR -->
-    <nav style="background-color: #1a1a1a; text-align: center; padding: 15px; border-bottom: 3px solid #e10600;">
+<header>
+    <h1>🏎️ Slipstream Racing League</h1>
+    <p>Championship Standings</p>
+</header>
 
-    <a href="index.html"
-       style="color: #fff; background-color: #333; text-decoration: none; padding: 10px 20px; margin: 0 5px; font-weight: bold; border-radius: 4px; display: inline-block;">
-       🏠 Home
-    </a>
-
-    <a href="driver-stats.html"
-       style="color: #fff; background-color: #333; text-decoration: none; padding: 10px 20px; margin: 0 5px; font-weight: bold; border-radius: 4px; display: inline-block;">
-       👤 Driver Stats
-    </a>
-
-    <a href="standings.html"
-       style="color: #fff; background-color: #333; text-decoration: none; padding: 10px 20px; margin: 0 5px; font-weight: bold; border-radius: 4px; display: inline-block;">
-       🏆 Standings
-    </a>
-
-    <a href="calendar.html"
-       style="color: #fff; background-color: #333; text-decoration: none; padding: 10px 20px; margin: 0 5px; font-weight: bold; border-radius: 4px; display: inline-block;">
-       📅 Calendar
-    </a>
-
-    <a href="results.html"
-       style="color: #fff; background-color: #333; text-decoration: none; padding: 10px 20px; margin: 0 5px; font-weight: bold; border-radius: 4px; display: inline-block;">
-       🏁 Results
-    </a>
-
-    <a href="https://discord.gg/2uzj4pkFp"
-       target="_blank"
-       rel="noopener noreferrer"
-       style="color: #fff; background-color: #5865F2; text-decoration: none; padding: 10px 20px; margin: 0 5px; font-weight: bold; border-radius: 4px; display: inline-block;">
-       💬 Discord
-    </a>
-
+<nav>
+    <a href="index.html" class="nav-button">🏠 Home</a>
+    <a href="driver-stats.html" class="nav-button">👤 Driver Stats</a>
+    <a href="standings.html" class="nav-button active">🏆 Standings</a>
+    <a href="calendar.html" class="nav-button">📅 Calendar</a>
+    <a href="results.html" class="nav-button">🏁 Results</a>
+    <a href="https://discord.gg/2uzj4pkFp" target="_blank" rel="noopener noreferrer" class="nav-button discord-button">💬 Discord</a>
 </nav>
 
-    <!-- CONTENT -->
-    <main style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
-        <section style="background-color: #1a1a1a; padding: 20px; border-radius: 8px;">
-            <h2 style="color: #e10600; border-bottom: 2px solid #333; padding-bottom: 10px; margin-top: 0;">🏆 Full Championship Standings</h2>
-            
-            <table style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 15px;">
-                <thead>
-                    <tr style="background-color: #e10600; color: #fff;">
-                        <th style="padding: 12px;">Pos</th>
-                        <th style="padding: 12px;">Driver</th>
-                        <th style="padding: 12px;">Team</th>
-                        <th style="padding: 12px;">Points</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Add your full grid list here -->
-                    <tr style="border-bottom: 1px solid #333; background-color: #222;">
-                        <td style="padding: 12px; font-weight: bold;">1</td>
-                        <td>Driver_One</td>
-                        <td style="color: #aaa;">Red Bull</td>
-                        <td style="font-weight: bold;">25</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #333;">
-                        <td style="padding: 12px; font-weight: bold;">2</td>
-                        <td>Driver_Two</td>
-                        <td style="color: #aaa;">Ferrari</td>
-                        <td style="font-weight: bold;">18</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #333; background-color: #222;">
-                        <td style="padding: 12px; font-weight: bold;">3</td>
-                        <td>Driver_Three</td>
-                        <td style="color: #aaa;">Mercedes</td>
-                        <td style="font-weight: bold;">15</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #333;">
-                        <td style="padding: 12px; font-weight: bold;">4</td>
-                        <td>Driver_Four</td>
-                        <td style="color: #aaa;">McLaren</td>
-                        <td style="font-weight: bold;">12</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #333; background-color: #222;">
-                        <td style="padding: 12px; font-weight: bold;">5</td>
-                        <td>Driver_Five</td>
-                        <td style="color: #aaa;">Aston Martin</td>
-                        <td style="font-weight: bold;">10</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </main>
+<main>
+
+<section class="card">
+
+```
+<h2>🏆 Full Championship Standings</h2>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Pos</th>
+            <th>Driver</th>
+            <th>Team</th>
+            <th>Points</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <!-- EDIT YOUR DRIVERS BELOW -->
+
+        <tr>
+            <td class="position gold">1</td>
+            <td>Driver_One</td>
+            <td class="status">Red Bull</td>
+            <td class="points">25</td>
+        </tr>
+
+        <tr>
+            <td class="position silver">2</td>
+            <td>Driver_Two</td>
+            <td class="status">Ferrari</td>
+            <td class="points">18</td>
+        </tr>
+
+        <tr>
+            <td class="position bronze">3</td>
+            <td>Driver_Three</td>
+            <td class="status">Mercedes</td>
+            <td class="points">15</td>
+        </tr>
+
+        <tr>
+            <td class="position">4</td>
+            <td>Driver_Four</td>
+            <td class="status">McLaren</td>
+            <td class="points">12</td>
+        </tr>
+
+        <tr>
+            <td class="position">5</td>
+            <td>Driver_Five</td>
+            <td class="status">Aston Martin</td>
+            <td class="points">10</td>
+        </tr>
+
+        <tr>
+            <td class="position">6</td>
+            <td>Driver_Six</td>
+            <td class="status">Williams</td>
+            <td class="points">8</td>
+        </tr>
+
+        <tr>
+            <td class="position">7</td>
+            <td>Driver_Seven</td>
+            <td class="status">Alpine</td>
+            <td class="points">6</td>
+        </tr>
+
+        <tr>
+            <td class="position">8</td>
+            <td>Driver_Eight</td>
+            <td class="status">Haas</td>
+            <td class="points">4</td>
+        </tr>
+
+    </tbody>
+
+</table>
+```
+
+</section>
+
+</main>
+
+<footer>
+    © 2026 Slipstream Racing League (SRL). All Rights Reserved.
+</footer>
 
 </body>
 </html>
-
