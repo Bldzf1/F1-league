@@ -1,1 +1,294 @@
+* {
+  box-sizing: border-box;
+  }
+
+body {
+background-color: #111;
+color: #fff;
+font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+margin: 0;
+padding: 0;
+}
+
+header {
+background: #e10600;
+padding: 25px 20px 20px;
+text-align: center;
+}
+
+header h1 {
+margin: 0;
+font-size: 2.5rem;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+header p {
+margin: 8px 0 0;
+opacity: 0.9;
+}
+
+nav {
+background-color: #1a1a1a;
+text-align: center;
+padding: 15px;
+border-bottom: 3px solid #e10600;
+}
+
+.nav-button {
+color: #fff;
+background-color: #333;
+text-decoration: none;
+padding: 11px 18px;
+margin: 4px;
+font-weight: bold;
+border-radius: 5px;
+display: inline-block;
+transition: 0.2s;
+}
+
+.nav-button:hover,
+.nav-button.active {
+background-color: #e10600;
+transform: translateY(-1px);
+}
+
+.discord-button {
+background-color: #5865F2;
+}
+
+.discord-button:hover {
+background-color: #4752c4;
+}
+
+main {
+max-width: 1100px;
+margin: 40px auto;
+padding: 0 20px;
+}
+
+.card {
+background-color: #1a1a1a;
+padding: 25px;
+border-radius: 8px;
+margin-bottom: 30px;
+}
+
+.card h2 {
+color: #e10600;
+border-bottom: 2px solid #333;
+padding-bottom: 10px;
+margin-top: 0;
+}
+
+.hero {
+border-left: 5px solid #e10600;
+}
+
+.hero p {
+line-height: 1.7;
+color: #ccc;
+}
+
+.two-column {
+display: flex;
+flex-wrap: wrap;
+gap: 30px;
+}
+
+.column {
+flex: 1;
+min-width: 300px;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 15px;
+}
+
+th {
+background-color: #e10600;
+color: white;
+padding: 12px;
+text-align: left;
+}
+
+td {
+padding: 12px;
+border-bottom: 1px solid #333;
+}
+
+tbody tr:nth-child(even) {
+background-color: #222;
+}
+
+tbody tr:hover {
+background-color: #2a2a2a;
+}
+
+.position {
+font-weight: bold;
+}
+
+.gold {
+color: gold;
+}
+
+.silver {
+color: silver;
+}
+
+.bronze {
+color: #cd7f32;
+}
+
+.points {
+font-weight: bold;
+}
+
+.status {
+color: #aaa;
+}
+
+.completed {
+color: #4caf50;
+font-weight: bold;
+}
+
+.upcoming {
+color: #e10600;
+font-weight: bold;
+}
+
+.tbd {
+color: #aaa;
+}
+
+.button-link {
+display: inline-block;
+margin-top: 20px;
+color: #e10600;
+text-decoration: none;
+font-weight: bold;
+}
+
+.button-link:hover {
+text-decoration: underline;
+}
+
+/* Driver Stats */
+
+.driver-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 20px;
+}
+
+.driver-card {
+background-color: #222;
+border: 1px solid #333;
+border-top: 4px solid #e10600;
+border-radius: 7px;
+padding: 20px;
+}
+
+.driver-card h3 {
+margin: 0 0 5px;
+font-size: 1.4rem;
+}
+
+.driver-team {
+color: #aaa;
+margin-bottom: 18px;
+}
+
+.stat-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 10px;
+}
+
+.stat {
+background-color: #171717;
+padding: 12px;
+border-radius: 5px;
+}
+
+.stat-label {
+display: block;
+color: #888;
+font-size: 0.8rem;
+text-transform: uppercase;
+}
+
+.stat-value {
+display: block;
+margin-top: 4px;
+font-size: 1.2rem;
+font-weight: bold;
+}
+
+/* Results */
+
+.race-selector {
+margin-bottom: 25px;
+}
+
+.race-selector label {
+display: block;
+margin-bottom: 8px;
+font-weight: bold;
+}
+
+.race-selector select {
+width: 100%;
+max-width: 500px;
+padding: 12px;
+background-color: #222;
+color: white;
+border: 1px solid #444;
+border-radius: 5px;
+font-size: 1rem;
+}
+
+.race-title {
+color: #e10600;
+margin-bottom: 5px;
+}
+
+.race-info {
+color: #888;
+margin-top: 0;
+}
+
+footer {
+text-align: center;
+padding: 25px;
+color: #666;
+font-size: 0.9rem;
+border-top: 1px solid #222;
+margin-top: 50px;
+}
+
+@media (max-width: 700px) {
+header h1 {
+font-size: 1.8rem;
+}
+
+```
+.nav-button {
+    display: block;
+    margin: 6px auto;
+    max-width: 250px;
+}
+
+th,
+td {
+    padding: 8px;
+    font-size: 0.9rem;
+}
+```
+
+}
 
