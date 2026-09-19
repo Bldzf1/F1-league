@@ -59,8 +59,8 @@ header {
     left: 30px;
     top: 50%;
     transform: translateY(-50%);
-    width: 75px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
 }
 
