@@ -1,27 +1,63 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRL | Race Results</title>
-    <link rel="stylesheet" href="style.css">
+
+```
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SRL | Results</title>
+
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
 
 <body>
 
 <header>
-    <h1>🏎️ Slipstream Racing League</h1>
-    <p>Race Results</p>
+
+```
+<h1>🏎️ Slipstream Racing League</h1>
+
+<p>Race Results</p>
+```
+
 </header>
 
 <nav>
-    <a href="index.html" class="nav-button">🏠 Home</a>
-    <a href="driver-stats.html" class="nav-button">👤 Driver Stats</a>
-    <a href="standings.html" class="nav-button">🏆 Standings</a>
-    <a href="calendar.html" class="nav-button">📅 Calendar</a>
-    <a href="results.html" class="nav-button active">🏁 Results</a>
-    <a href="https://discord.gg/2uzj4pkFp" target="_blank" rel="noopener noreferrer" class="nav-button discord-button">💬 Discord</a>
+
+```
+<a href="index.html" class="nav-button">
+    🏠 Home
+</a>
+
+<a href="driver-stats.html" class="nav-button">
+    👤 Driver Stats
+</a>
+
+<a href="standings.html" class="nav-button">
+    🏆 Standings
+</a>
+
+<a href="calendar.html" class="nav-button">
+    📅 Calendar
+</a>
+
+<a href="results.html" class="nav-button active">
+    🏁 Results
+</a>
+
+<a href="https://discord.gg/2uzj4pkFp"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="nav-button discord-button">
+    💬 Discord
+</a>
+```
+
 </nav>
 
 <main>
@@ -31,51 +67,70 @@
 ```
 <h2>🏁 Race Results</h2>
 
-<div class="race-selector">
 
-    <label for="raceSelect">
-        Select a race:
+<!-- SEASON -->
+
+<div class="selector">
+
+    <label for="seasonSelect">
+        Select Season
     </label>
 
-    <select id="raceSelect" onchange="showResults()">
+    <select id="seasonSelect">
 
-        <option value="round1">
-            Round 1 — Bahrain GP
+        <option value="season2">
+            Season 2 — 2026
         </option>
 
-        <option value="round2">
-            Round 2 — British GP
-        </option>
-
-        <option value="round3">
-            Round 3 — Belgian GP
+        <option value="season1">
+            Season 1
         </option>
 
     </select>
 
 </div>
 
-<h2 id="raceTitle" class="race-title">
+
+<!-- RACE -->
+
+<div class="selector">
+
+    <label for="raceSelect">
+        Select Race
+    </label>
+
+    <select id="raceSelect"></select>
+
+</div>
+
+
+<h2 id="raceTitle">
     Bahrain GP
 </h2>
 
-<p id="raceInfo" class="race-info">
-    Round 1
+<p id="raceInfo" class="muted">
+    Season 2 • Round 1
 </p>
+
+
+<!-- RESULTS TABLE -->
 
 <table>
 
     <thead>
+
         <tr>
+
             <th>Pos</th>
             <th>Driver</th>
             <th>Team</th>
             <th>Points</th>
+
         </tr>
+
     </thead>
 
-    <tbody id="resultsTable">
-    </tbody>
+    <tbody id="resultsTable"></tbody>
 
 </table>
 ```
@@ -90,67 +145,186 @@
 
 <script>
 
-const raceResults = {
+/* =========================================
+   EDIT RACE RESULTS HERE
+   ========================================= */
 
-    round1: {
-        title: "Bahrain GP",
-        info: "Round 1",
-        drivers: [
-            ["1", "Driver_One", "Red Bull", "25"],
-            ["2", "Driver_Two", "Ferrari", "18"],
-            ["3", "Driver_Three", "Mercedes", "15"],
-            ["4", "Driver_Four", "McLaren", "12"],
-            ["5", "Driver_Five", "Aston Martin", "10"]
-        ]
+const results = {
+
+    season2: {
+
+        round1: {
+
+            name: "Bahrain GP",
+
+            date: "13/09/2026",
+
+            drivers: [
+
+                ["1", "Driver One", "Red Bull", "25"],
+                ["2", "Driver Two", "Ferrari", "18"],
+                ["3", "Driver Three", "McLaren", "15"],
+                ["4", "Driver Four", "Mercedes", "12"],
+                ["5", "Driver Five", "Aston Martin", "10"]
+
+            ]
+
+        },
+
+
+        round2: {
+
+            name: "British GP",
+
+            date: "20/09/2026",
+
+            drivers: [
+
+                ["1", "Driver Two", "Ferrari", "25"],
+                ["2", "Driver One", "Red Bull", "18"],
+                ["3", "Driver Five", "Aston Martin", "15"],
+                ["4", "Driver Three", "McLaren", "12"],
+                ["5", "Driver Four", "Mercedes", "10"]
+
+            ]
+
+        },
+
+
+        round3: {
+
+            name: "Belgian GP",
+
+            date: "TBD",
+
+            drivers: [
+
+                ["1", "TBD", "TBD", "0"],
+                ["2", "TBD", "TBD", "0"],
+                ["3", "TBD", "TBD", "0"],
+                ["4", "TBD", "TBD", "0"],
+                ["5", "TBD", "TBD", "0"]
+
+            ]
+
+        }
+
     },
 
-    round2: {
-        title: "British GP",
-        info: "Round 2",
-        drivers: [
-            ["1", "Driver_Two", "Ferrari", "25"],
-            ["2", "Driver_One", "Red Bull", "18"],
-            ["3", "Driver_Five", "Aston Martin", "15"],
-            ["4", "Driver_Three", "Mercedes", "12"],
-            ["5", "Driver_Four", "McLaren", "10"]
-        ]
-    },
 
-    round3: {
-        title: "Belgian GP",
-        info: "Round 3",
-        drivers: [
-            ["1", "TBD", "TBD", "0"],
-            ["2", "TBD", "TBD", "0"],
-            ["3", "TBD", "TBD", "0"],
-            ["4", "TBD", "TBD", "0"],
-            ["5", "TBD", "TBD", "0"]
-        ]
+    season1: {
+
+        round1: {
+
+            name: "Bahrain GP",
+
+            date: "01/06/2026",
+
+            drivers: [
+
+                ["1", "Driver One", "Red Bull", "25"],
+                ["2", "Driver Two", "Ferrari", "18"],
+                ["3", "Driver Three", "McLaren", "15"]
+
+            ]
+
+        },
+
+
+        round2: {
+
+            name: "Saudi Arabian GP",
+
+            date: "08/06/2026",
+
+            drivers: [
+
+                ["1", "Driver Three", "McLaren", "25"],
+                ["2", "Driver One", "Red Bull", "18"],
+                ["3", "Driver Two", "Ferrari", "15"]
+
+            ]
+
+        }
+
     }
 
 };
 
 
+/* =========================================
+   LOAD RACES INTO DROPDOWN
+   ========================================= */
+
+function loadRaces() {
+
+    const season =
+        document.getElementById("seasonSelect").value;
+
+    const raceSelect =
+        document.getElementById("raceSelect");
+
+    raceSelect.innerHTML = "";
+
+    const seasonResults =
+        results[season];
+
+    Object.keys(seasonResults).forEach(function(round) {
+
+        const option =
+            document.createElement("option");
+
+        option.value = round;
+
+        option.textContent =
+            round.replace("round", "Round ")
+            + " — "
+            + seasonResults[round].name;
+
+        raceSelect.appendChild(option);
+
+    });
+
+    showResults();
+
+}
+
+
+/* =========================================
+   DISPLAY RESULTS
+   ========================================= */
+
 function showResults() {
 
-    const selectedRace =
+    const season =
+        document.getElementById("seasonSelect").value;
+
+    const round =
         document.getElementById("raceSelect").value;
 
     const race =
-        raceResults[selectedRace];
+        results[season][round];
+
+    if (!race) {
+        return;
+    }
 
     document.getElementById("raceTitle").textContent =
-        race.title;
+        race.name;
 
     document.getElementById("raceInfo").textContent =
-        race.info;
+        season === "season2"
+            ? "Season 2 • " + round.replace("round", "Round ")
+            : "Season 1 • " + round.replace("round", "Round ");
+
 
     const table =
         document.getElementById("resultsTable");
 
     table.innerHTML = "";
 
-    race.drivers.forEach(driver => {
+
+    race.drivers.forEach(function(driver) {
 
         const row =
             document.createElement("tr");
@@ -158,7 +332,7 @@ function showResults() {
         row.innerHTML = `
             <td class="position">${driver[0]}</td>
             <td>${driver[1]}</td>
-            <td class="status">${driver[2]}</td>
+            <td class="muted">${driver[2]}</td>
             <td class="points">${driver[3]}</td>
         `;
 
@@ -169,11 +343,27 @@ function showResults() {
 }
 
 
-/* Load first race automatically */
-showResults();
+/* =========================================
+   EVENT LISTENERS
+   ========================================= */
+
+document
+    .getElementById("seasonSelect")
+    .addEventListener("change", loadRaces);
+
+
+document
+    .getElementById("raceSelect")
+    .addEventListener("change", showResults);
+
+
+/* =========================================
+   LOAD DEFAULT
+   ========================================= */
+
+loadRaces();
 
 </script>
 
 </body>
 </html>
-
