@@ -21,7 +21,12 @@
     <a href="standings.html" class="nav-button active">🏆 Standings</a>
     <a href="calendar.html" class="nav-button">📅 Calendar</a>
     <a href="results.html" class="nav-button">🏁 Results</a>
-    <a href="https://discord.gg/2uzj4pkFp" target="_blank" rel="noopener noreferrer" class="nav-button discord-button">💬 Discord</a>
+    <a href="https://discord.gg/2uzj4pkFp"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="nav-button discord-button">
+       💬 Discord
+    </a>
 </nav>
 
 <main>
@@ -29,79 +34,58 @@
 <section class="card">
 
 ```
-<h2>🏆 Full Championship Standings</h2>
+<h2>🏆 Championship Standings</h2>
+
+<!-- SEASON SELECTOR -->
+
+<div class="race-selector">
+
+    <label for="seasonSelect">
+        Select Season:
+    </label>
+
+    <select id="seasonSelect" onchange="showStandings()">
+
+        <option value="season2">
+            Season 2 — 2026
+        </option>
+
+        <option value="season1">
+            Season 1
+        </option>
+
+    </select>
+
+</div>
+
+
+<!-- CURRENT SEASON TITLE -->
+
+<h2 id="seasonTitle" class="race-title">
+    Season 2
+</h2>
+
+<p id="seasonInfo" class="race-info">
+    2026 Championship
+</p>
+
+
+<!-- STANDINGS TABLE -->
 
 <table>
 
     <thead>
+
         <tr>
             <th>Pos</th>
             <th>Driver</th>
             <th>Team</th>
             <th>Points</th>
         </tr>
+
     </thead>
 
-    <tbody>
-
-        <!-- EDIT YOUR DRIVERS BELOW -->
-
-        <tr>
-            <td class="position gold">1</td>
-            <td>Driver_One</td>
-            <td class="status">Red Bull</td>
-            <td class="points">25</td>
-        </tr>
-
-        <tr>
-            <td class="position silver">2</td>
-            <td>Driver_Two</td>
-            <td class="status">Ferrari</td>
-            <td class="points">18</td>
-        </tr>
-
-        <tr>
-            <td class="position bronze">3</td>
-            <td>Driver_Three</td>
-            <td class="status">Mercedes</td>
-            <td class="points">15</td>
-        </tr>
-
-        <tr>
-            <td class="position">4</td>
-            <td>Driver_Four</td>
-            <td class="status">McLaren</td>
-            <td class="points">12</td>
-        </tr>
-
-        <tr>
-            <td class="position">5</td>
-            <td>Driver_Five</td>
-            <td class="status">Aston Martin</td>
-            <td class="points">10</td>
-        </tr>
-
-        <tr>
-            <td class="position">6</td>
-            <td>Driver_Six</td>
-            <td class="status">Williams</td>
-            <td class="points">8</td>
-        </tr>
-
-        <tr>
-            <td class="position">7</td>
-            <td>Driver_Seven</td>
-            <td class="status">Alpine</td>
-            <td class="points">6</td>
-        </tr>
-
-        <tr>
-            <td class="position">8</td>
-            <td>Driver_Eight</td>
-            <td class="status">Haas</td>
-            <td class="points">4</td>
-        </tr>
-
+    <tbody id="standingsTable">
     </tbody>
 
 </table>
@@ -114,6 +98,141 @@
 <footer>
     © 2026 Slipstream Racing League (SRL). All Rights Reserved.
 </footer>
+
+<script>
+
+const seasonStandings = {
+
+    /* =========================
+       SEASON 2
+       ========================= */
+
+    season2: {
+
+        title: "Season 2",
+        info: "2026 Championship",
+
+        drivers: [
+
+            ["1", "Driver_One", "Red Bull", "25"],
+
+            ["2", "Driver_Two", "Ferrari", "18"],
+
+            ["3", "Driver_Three", "Mercedes", "15"],
+
+            ["4", "Driver_Four", "McLaren", "12"],
+
+            ["5", "Driver_Five", "Aston Martin", "10"],
+
+            ["6", "Driver_Six", "Williams", "8"],
+
+            ["7", "Driver_Seven", "Alpine", "6"],
+
+            ["8", "Driver_Eight", "Haas", "4"]
+
+        ]
+
+    },
+
+
+    /* =========================
+       SEASON 1
+       ========================= */
+
+    season1: {
+
+        title: "Season 1",
+        info: "SRL Season 1 Championship",
+
+        drivers: [
+
+            ["1", "Driver_One", "Red Bull", "150"],
+
+            ["2", "Driver_Two", "Ferrari", "132"],
+
+            ["3", "Driver_Three", "McLaren", "118"],
+
+            ["4", "Driver_Four", "Mercedes", "105"],
+
+            ["5", "Driver_Five", "Aston Martin", "94"],
+
+            ["6", "Driver_Six", "Williams", "82"],
+
+            ["7", "Driver_Seven", "Alpine", "71"],
+
+            ["8", "Driver_Eight", "Haas", "60"]
+
+        ]
+
+    }
+
+};
+
+
+/* =========================
+   DISPLAY STANDINGS
+   ========================= */
+
+function showStandings() {
+
+    const selectedSeason =
+        document.getElementById("seasonSelect").value;
+
+    const season =
+        seasonStandings[selectedSeason];
+
+
+    /* Change title */
+
+    document.getElementById("seasonTitle").textContent =
+        season.title;
+
+
+    /* Change subtitle */
+
+    document.getElementById("seasonInfo").textContent =
+        season.info;
+
+
+    /* Get table */
+
+    const table =
+        document.getElementById("standingsTable");
+
+
+    /* Clear old standings */
+
+    table.innerHTML = "";
+
+
+    /* Add drivers */
+
+    season.drivers.forEach(driver => {
+
+        const row =
+            document.createElement("tr");
+
+
+        row.innerHTML = `
+            <td class="position">${driver[0]}</td>
+            <td>${driver[1]}</td>
+            <td class="status">${driver[2]}</td>
+            <td class="points">${driver[3]}</td>
+        `;
+
+
+        table.appendChild(row);
+
+    });
+
+}
+
+
+/* Load Season 2 automatically */
+
+showStandings();
+
+</script>
 
 </body>
 </html>
