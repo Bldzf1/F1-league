@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-```
-<title>SRL | Championship Standings</title>
-
-<link rel="stylesheet" href="style.css">
-```
-
+    <title>SRL | Standings</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -60,13 +56,10 @@
 ```
 <h2>🏆 Championship Standings</h2>
 
-
-<!-- SEASON DROPDOWN -->
-
-<div class="race-selector">
+<div class="selector">
 
     <label for="seasonSelect">
-        Select Season:
+        Select Season
     </label>
 
     <select id="seasonSelect">
@@ -83,19 +76,13 @@
 
 </div>
 
-
-<!-- SELECTED SEASON -->
-
-<h2 id="seasonTitle" class="race-title">
+<h2 id="seasonTitle">
     Season 2
 </h2>
 
-<p id="seasonInfo" class="race-info">
+<p id="seasonInfo" class="muted">
     2026 Championship
 </p>
-
-
-<!-- STANDINGS -->
 
 <table>
 
@@ -125,12 +112,11 @@
 
 <script>
 
-/* ==========================================
-   SRL SEASON DATA
-   EDIT THIS SECTION
-   ========================================== */
+/* =========================================
+   EDIT SEASON STANDINGS HERE
+   ========================================= */
 
-const seasonStandings = {
+const seasons = {
 
     season2: {
 
@@ -140,14 +126,14 @@ const seasonStandings = {
 
         drivers: [
 
-            ["1", "Driver_One", "Red Bull", "25"],
-            ["2", "Driver_Two", "Ferrari", "18"],
-            ["3", "Driver_Three", "Mercedes", "15"],
-            ["4", "Driver_Four", "McLaren", "12"],
-            ["5", "Driver_Five", "Aston Martin", "10"],
-            ["6", "Driver_Six", "Williams", "8"],
-            ["7", "Driver_Seven", "Alpine", "6"],
-            ["8", "Driver_Eight", "Haas", "4"]
+            ["1", "Driver One", "Red Bull", "140"],
+            ["2", "Driver Two", "Ferrari", "76"],
+            ["3", "Driver Three", "McLaren", "76"],
+            ["4", "Driver Four", "Mercedes", "64"],
+            ["5", "Driver Five", "Aston Martin", "50"],
+            ["6", "Driver Six", "Williams", "42"],
+            ["7", "Driver Seven", "Alpine", "35"],
+            ["8", "Driver Eight", "Haas", "28"]
 
         ]
 
@@ -162,14 +148,14 @@ const seasonStandings = {
 
         drivers: [
 
-            ["1", "Driver_One", "Red Bull", "150"],
-            ["2", "Driver_Two", "Ferrari", "132"],
-            ["3", "Driver_Three", "McLaren", "118"],
-            ["4", "Driver_Four", "Mercedes", "105"],
-            ["5", "Driver_Five", "Aston Martin", "94"],
-            ["6", "Driver_Six", "Williams", "82"],
-            ["7", "Driver_Seven", "Alpine", "71"],
-            ["8", "Driver_Eight", "Haas", "60"]
+            ["1", "Driver One", "Red Bull", "150"],
+            ["2", "Driver Two", "Ferrari", "132"],
+            ["3", "Driver Three", "McLaren", "118"],
+            ["4", "Driver Four", "Mercedes", "105"],
+            ["5", "Driver Five", "Aston Martin", "94"],
+            ["6", "Driver Six", "Williams", "82"],
+            ["7", "Driver Seven", "Alpine", "71"],
+            ["8", "Driver Eight", "Haas", "60"]
 
         ]
 
@@ -178,48 +164,40 @@ const seasonStandings = {
 };
 
 
-/* ==========================================
-   CHANGE THE TABLE
-   ========================================== */
+/* =========================================
+   DISPLAY STANDINGS
+   ========================================= */
 
 function showStandings() {
 
-    const selectedSeason =
+    const selected =
         document.getElementById("seasonSelect").value;
 
-
     const season =
-        seasonStandings[selectedSeason];
-
+        seasons[selected];
 
     document.getElementById("seasonTitle").textContent =
         season.title;
 
-
     document.getElementById("seasonInfo").textContent =
         season.info;
-
 
     const table =
         document.getElementById("standingsTable");
 
-
     table.innerHTML = "";
-
 
     season.drivers.forEach(function(driver) {
 
         const row =
             document.createElement("tr");
 
-
         row.innerHTML = `
             <td class="position">${driver[0]}</td>
             <td>${driver[1]}</td>
-            <td class="status">${driver[2]}</td>
+            <td class="muted">${driver[2]}</td>
             <td class="points">${driver[3]}</td>
         `;
-
 
         table.appendChild(row);
 
@@ -228,18 +206,10 @@ function showStandings() {
 }
 
 
-/* ==========================================
-   WHEN DROPDOWN CHANGES
-   ========================================== */
-
 document
     .getElementById("seasonSelect")
     .addEventListener("change", showStandings);
 
-
-/* ==========================================
-   LOAD DEFAULT SEASON
-   ========================================== */
 
 showStandings();
 
