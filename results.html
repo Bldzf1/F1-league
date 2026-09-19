@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRL | Race Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🏎️ Slipstream Racing League</h1>
+    <p>Race Results</p>
+</header>
+
+<nav>
+    <a href="index.html" class="nav-button">🏠 Home</a>
+    <a href="driver-stats.html" class="nav-button">👤 Driver Stats</a>
+    <a href="standings.html" class="nav-button">🏆 Standings</a>
+    <a href="calendar.html" class="nav-button">📅 Calendar</a>
+    <a href="results.html" class="nav-button active">🏁 Results</a>
+    <a href="https://discord.gg/2uzj4pkFp" target="_blank" rel="noopener noreferrer" class="nav-button discord-button">💬 Discord</a>
+</nav>
+
+<main>
+
+<section class="card">
+
+```
+<h2>🏁 Race Results</h2>
+
+<div class="race-selector">
+
+    <label for="raceSelect">
+        Select a race:
+    </label>
+
+    <select id="raceSelect" onchange="showResults()">
+
+        <option value="round1">
+            Round 1 — Bahrain GP
+        </option>
+
+        <option value="round2">
+            Round 2 — British GP
+        </option>
+
+        <option value="round3">
+            Round 3 — Belgian GP
+        </option>
+
+    </select>
+
+</div>
+
+<h2 id="raceTitle" class="race-title">
+    Bahrain GP
+</h2>
+
+<p id="raceInfo" class="race-info">
+    Round 1
+</p>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Pos</th>
+            <th>Driver</th>
+            <th>Team</th>
+            <th>Points</th>
+        </tr>
+    </thead>
+
+    <tbody id="resultsTable">
+    </tbody>
+
+</table>
+```
+
+</section>
+
+</main>
+
+<footer>
+    © 2026 Slipstream Racing League (SRL). All Rights Reserved.
+</footer>
+
+<script>
+
+const raceResults = {
+
+    round1: {
+        title: "Bahrain GP",
+        info: "Round 1",
+        drivers: [
+            ["1", "Driver_One", "Red Bull", "25"],
+            ["2", "Driver_Two", "Ferrari", "18"],
+            ["3", "Driver_Three", "Mercedes", "15"],
+            ["4", "Driver_Four", "McLaren", "12"],
+            ["5", "Driver_Five", "Aston Martin", "10"]
+        ]
+    },
+
+    round2: {
+        title: "British GP",
+        info: "Round 2",
+        drivers: [
+            ["1", "Driver_Two", "Ferrari", "25"],
+            ["2", "Driver_One", "Red Bull", "18"],
+            ["3", "Driver_Five", "Aston Martin", "15"],
+            ["4", "Driver_Three", "Mercedes", "12"],
+            ["5", "Driver_Four", "McLaren", "10"]
+        ]
+    },
+
+    round3: {
+        title: "Belgian GP",
+        info: "Round 3",
+        drivers: [
+            ["1", "TBD", "TBD", "0"],
+            ["2", "TBD", "TBD", "0"],
+            ["3", "TBD", "TBD", "0"],
+            ["4", "TBD", "TBD", "0"],
+            ["5", "TBD", "TBD", "0"]
+        ]
+    }
+
+};
+
+
+function showResults() {
+
+    const selectedRace =
+        document.getElementById("raceSelect").value;
+
+    const race =
+        raceResults[selectedRace];
+
+    document.getElementById("raceTitle").textContent =
+        race.title;
+
+    document.getElementById("raceInfo").textContent =
+        race.info;
+
+    const table =
+        document.getElementById("resultsTable");
+
+    table.innerHTML = "";
+
+    race.drivers.forEach(driver => {
+
+        const row =
+            document.createElement("tr");
+
+        row.innerHTML = `
+            <td class="position">${driver[0]}</td>
+            <td>${driver[1]}</td>
+            <td class="status">${driver[2]}</td>
+            <td class="points">${driver[3]}</td>
+        `;
+
+        table.appendChild(row);
+
+    });
+
+}
+
+
+/* Load first race automatically */
+showResults();
+
+</script>
+
+</body>
+</html>
 
