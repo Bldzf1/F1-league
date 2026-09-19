@@ -1,129 +1,107 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slipstream Racing League | SRL</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: #111; color: #fff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0;">
 
-    <!-- HEADER / TITLE -->
-    <header style="background-color: #e10600; padding: 20px 20px 10px 20px; text-align: center;">
-        <h1 style="margin: 0; font-size: 2.5rem; letter-spacing: 2px; text-transform: uppercase;">🏎️ Slipstream Racing League</h1>
-        <p style="margin: 5px 0 15px 0; font-style: italic; opacity: 0.9;"></p>
-    </header>
+<body>
 
-    <!-- NAVIGATION MENU (BUTTONS) -->
-    <nav style="background-color: #1a1a1a; text-align: center; padding: 15px; border-bottom: 3px solid #e10600;">
+<header>
+    <h1>🏎️ Slipstream Racing League</h1>
+    <p>Competitive racing. Clean driving. Championship racing.</p>
+</header>
 
-    <a href="index.html"
-       style="color: #fff; background-color: #333; text-decoration: none; padding: 10px 20px; margin: 0 5px; font-weight: bold; border-radius: 4px; display: inline-block;">
-       🏠 Home
-    </a>
-
-    <a href="driver-stats.html"
-       style="color: #fff; background-color: #333; text-decoration: none; padding: 10px 20px; margin: 0 5px; font-weight: bold; border-radius: 4px; display: inline-block;">
-       👤 Driver Stats
-    </a>
-
-    <a href="standings.html"
-       style="color: #fff; background-color: #333; text-decoration: none; padding: 10px 20px; margin: 0 5px; font-weight: bold; border-radius: 4px; display: inline-block;">
-       🏆 Standings
-    </a>
-
-    <a href="calendar.html"
-       style="color: #fff; background-color: #333; text-decoration: none; padding: 10px 20px; margin: 0 5px; font-weight: bold; border-radius: 4px; display: inline-block;">
-       📅 Calendar
-    </a>
-
-    <a href="results.html"
-       style="color: #fff; background-color: #333; text-decoration: none; padding: 10px 20px; margin: 0 5px; font-weight: bold; border-radius: 4px; display: inline-block;">
-       🏁 Results
-    </a>
-
-    <a href="https://discord.gg/2uzj4pkFp"
-       target="_blank"
-       rel="noopener noreferrer"
-       style="color: #fff; background-color: #5865F2; text-decoration: none; padding: 10px 20px; margin: 0 5px; font-weight: bold; border-radius: 4px; display: inline-block;">
-       💬 Discord
-    </a>
-
+<nav>
+    <a href="index.html" class="nav-button active">🏠 Home</a>
+    <a href="driver-stats.html" class="nav-button">👤 Driver Stats</a>
+    <a href="standings.html" class="nav-button">🏆 Standings</a>
+    <a href="calendar.html" class="nav-button">📅 Calendar</a>
+    <a href="results.html" class="nav-button">🏁 Results</a>
+    <a href="https://discord.gg/2uzj4pkFp" target="_blank" rel="noopener noreferrer" class="nav-button discord-button">💬 Discord</a>
 </nav>
 
-    <!-- MAIN CONTENT CONTAINER -->
-    <main style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
+<main>
 
-        <!-- WELCOME HERO SECTION -->
-        <section style="background-color: #1a1a1a; padding: 30px; border-radius: 8px; border-left: 5px solid #e10600; margin-bottom: 30px;">
-            <h2 style="color: #e10600; margin-top: 0;">Welcome to SRL</h2>
-            <p style="line-height: 1.6; color: #ccc;">
-                Welcome to the official home of the **Slipstream Racing League**. We host high-speed, competitive racing seasons bringing together the cleanest and fastest drivers on the grid. Check back here regularly for updated race calendars, official league standings, and structural announcements.
-            </p>
-        </section>
+```
+<section class="card hero">
+    <h2>Welcome to SRL</h2>
+    <p>
+        Welcome to the official home of the Slipstream Racing League.
+        SRL brings together competitive drivers for organised, clean and
+        exciting racing.
+    </p>
 
-        <!-- TWO COLUMN LAYOUT FOR SCHEDULE & QUICK STANDINGS -->
-        <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+    <p>
+        Check out the latest championship standings, race calendar,
+        results and driver statistics below.
+    </p>
+</section>
 
-            <!-- LEFT COLUMN: RACE CALENDAR -->
-            <section style="flex: 1; min-width: 300px; background-color: #1a1a1a; padding: 20px; border-radius: 8px;">
-                <h2 style="color: #e10600; border-bottom: 2px solid #333; padding-bottom: 10px; margin-top: 0;">📅 Race Schedule</h2>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="padding: 12px 0; border-bottom: 1px solid #333;">
-                        <strong style="color: #e10600;">Round 1:</strong> Bahrain GP — <span style="color: #aaa;">Completed</span>
-                    </li>
-                    <li style="padding: 12px 0; border-bottom: 1px solid #333;">
-                        <strong style="color: #e10600;">Round 2:</strong> Silverstone GP — <span style="color: #aaa;">Upcoming Sunday</span>
-                    </li>
-                    <li style="padding: 12px 0; border-bottom: 1px solid #333;">
-                        <strong style="color: #e10600;">Round 3:</strong> Spa-Francorchamps — <span style="color: #aaa;">TBD</span>
-                    </li>
-                    <li style="padding: 12px 0;">
-                        <strong style="color: #e10600;">Round 4:</strong> Monza GP — <span style="color: #aaa;">TBD</span>
-                    </li>
-                </ul>
-            </section>
+<div class="two-column">
 
-            <!-- RIGHT COLUMN: QUICK STANDINGS -->
-            <section style="flex: 1.5; min-width: 300px; background-color: #1a1a1a; padding: 20px; border-radius: 8px;">
-                <h2 style="color: #e10600; border-bottom: 2px solid #333; padding-bottom: 10px; margin-top: 0;">🏆 Championship Top 3</h2>
-                <table style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 15px;">
-                    <thead>
-                        <tr style="background-color: #e10600; color: #fff;">
-                            <th style="padding: 10px;">Pos</th>
-                            <th style="padding: 10px;">Driver</th>
-                            <th style="padding: 10px;">Points</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom: 1px solid #333; background-color: #222;">
-                            <td style="padding: 10px; font-weight: bold; color: gold;">1</td>
-                            <td style="padding: 10px;">Driver_One</td>
-                            <td style="padding: 10px; font-weight: bold;">25</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #333;">
-                            <td style="padding: 10px; font-weight: bold; color: silver;">2</td>
-                            <td style="padding: 10px;">Driver_Two</td>
-                            <td style="padding: 10px; font-weight: bold;">18</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #333; background-color: #222;">
-                            <td style="padding: 10px; font-weight: bold; color: #cd7f32;">3</td>
-                            <td style="padding: 10px;">Driver_Three</td>
-                            <td style="padding: 10px; font-weight: bold;">15</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div style="text-align: center; margin-top: 20px;">
-                    <a href="standings.html" style="color: #e10600; text-decoration: none; font-weight: bold;">View Full Standings Table →</a>
-                </div>
-            </section>
+    <section class="card column">
+        <h2>📅 Next Race</h2>
 
-        </div>
-    </main>
+        <h3>British GP</h3>
+        <p class="status">Round 2</p>
+        <p>📅 Sunday — Customise date</p>
+        <p>⏰ 7:00 PM</p>
 
-    <!-- FOOTER -->
-    <footer style="text-align: center; padding: 20px; color: #666; font-size: 0.9rem; border-top: 1px solid #222; margin-top: 40px;">
-        <p>&copy; 2026 Slipstream Racing League (SRL). All Rights Reserved.</p>
-    </footer>
+        <a href="calendar.html" class="button-link">
+            View Full Calendar →
+        </a>
+    </section>
+
+    <section class="card column">
+        <h2>🏆 Championship Top 3</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Pos</th>
+                    <th>Driver</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="position gold">1</td>
+                    <td>Driver_One</td>
+                    <td class="points">25</td>
+                </tr>
+
+                <tr>
+                    <td class="position silver">2</td>
+                    <td>Driver_Two</td>
+                    <td class="points">18</td>
+                </tr>
+
+                <tr>
+                    <td class="position bronze">3</td>
+                    <td>Driver_Three</td>
+                    <td class="points">15</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="standings.html" class="button-link">
+            View Full Standings →
+        </a>
+    </section>
+
+</div>
+```
+
+</main>
+
+<footer>
+    © 2026 Slipstream Racing League (SRL). All Rights Reserved.
+</footer>
 
 </body>
 </html>
