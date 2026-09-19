@@ -1,294 +1,353 @@
-* {
-  box-sizing: border-box;
-  }
+/* =========================================
+   SRL - BLUE / WHITE / BLACK THEME
+   ========================================= */
 
-body {
-background-color: #111;
-color: #fff;
-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-margin: 0;
-padding: 0;
+* {
+    box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    background: #080b10;
+    color: #ffffff;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
 header {
-background: #e10600;
-padding: 25px 20px 20px;
-text-align: center;
+    background: #1769ff;
+    text-align: center;
+    padding: 25px 20px;
+    border-bottom: 4px solid #ffffff;
 }
 
 header h1 {
-margin: 0;
-font-size: 2.5rem;
-letter-spacing: 2px;
-text-transform: uppercase;
+    margin: 0;
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 header p {
-margin: 8px 0 0;
-opacity: 0.9;
+    margin: 8px 0 0;
+    color: #ffffff;
+    opacity: 0.9;
 }
 
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
 nav {
-background-color: #1a1a1a;
-text-align: center;
-padding: 15px;
-border-bottom: 3px solid #e10600;
+    background: #0d1117;
+    border-bottom: 2px solid #1769ff;
+    text-align: center;
+    padding: 15px;
 }
 
 .nav-button {
-color: #fff;
-background-color: #333;
-text-decoration: none;
-padding: 11px 18px;
-margin: 4px;
-font-weight: bold;
-border-radius: 5px;
-display: inline-block;
-transition: 0.2s;
+    display: inline-block;
+    background: #181e27;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 11px 17px;
+    margin: 4px;
+    border-radius: 6px;
+    border: 1px solid #2b3442;
+    transition: 0.2s;
 }
 
 .nav-button:hover,
 .nav-button.active {
-background-color: #e10600;
-transform: translateY(-1px);
+    background: #1769ff;
+    border-color: #1769ff;
+    color: #ffffff;
 }
 
 .discord-button {
-background-color: #5865F2;
+    background: #5865f2;
+    border-color: #5865f2;
 }
 
 .discord-button:hover {
-background-color: #4752c4;
+    background: #4752c4;
+    border-color: #4752c4;
 }
 
+/* =========================================
+   MAIN
+   ========================================= */
+
 main {
-max-width: 1100px;
-margin: 40px auto;
-padding: 0 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .card {
-background-color: #1a1a1a;
-padding: 25px;
-border-radius: 8px;
-margin-bottom: 30px;
+    background: #111722;
+    border: 1px solid #202936;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
 }
 
 .card h2 {
-color: #e10600;
-border-bottom: 2px solid #333;
-padding-bottom: 10px;
-margin-top: 0;
+    color: #4d8dff;
+    border-bottom: 2px solid #273241;
+    padding-bottom: 10px;
+    margin-top: 0;
 }
 
+/* =========================================
+   HOME / HERO
+   ========================================= */
+
 .hero {
-border-left: 5px solid #e10600;
+    border-left: 5px solid #1769ff;
 }
 
 .hero p {
-line-height: 1.7;
-color: #ccc;
+    color: #cbd3df;
+    line-height: 1.7;
 }
 
 .two-column {
-display: flex;
-flex-wrap: wrap;
-gap: 30px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .column {
-flex: 1;
-min-width: 300px;
+    flex: 1;
+    min-width: 300px;
 }
 
+/* =========================================
+   TABLES
+   ========================================= */
+
 table {
-width: 100%;
-border-collapse: collapse;
-margin-top: 15px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
 }
 
 th {
-background-color: #e10600;
-color: white;
-padding: 12px;
-text-align: left;
+    background: #1769ff;
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
 }
 
 td {
-padding: 12px;
-border-bottom: 1px solid #333;
+    padding: 12px;
+    border-bottom: 1px solid #27303d;
 }
 
 tbody tr:nth-child(even) {
-background-color: #222;
+    background: #151b24;
 }
 
 tbody tr:hover {
-background-color: #2a2a2a;
+    background: #1b2635;
 }
 
 .position {
-font-weight: bold;
+    font-weight: bold;
 }
 
 .gold {
-color: gold;
+    color: #ffd700;
 }
 
 .silver {
-color: silver;
+    color: #cfd4dc;
 }
 
 .bronze {
-color: #cd7f32;
+    color: #cd8b4a;
 }
 
 .points {
-font-weight: bold;
+    font-weight: bold;
+    color: #ffffff;
 }
 
-.status {
-color: #aaa;
+.muted {
+    color: #8995a5;
 }
 
-.completed {
-color: #4caf50;
-font-weight: bold;
+/* =========================================
+   DROPDOWNS
+   ========================================= */
+
+.selector {
+    margin: 20px 0;
 }
 
-.upcoming {
-color: #e10600;
-font-weight: bold;
+.selector label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #ffffff;
 }
 
-.tbd {
-color: #aaa;
+.selector select {
+    width: 100%;
+    max-width: 450px;
+    background: #151b24;
+    color: #ffffff;
+    border: 1px solid #354154;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
-.button-link {
-display: inline-block;
-margin-top: 20px;
-color: #e10600;
-text-decoration: none;
-font-weight: bold;
+.selector select:focus {
+    outline: none;
+    border-color: #1769ff;
+    box-shadow: 0 0 0 2px rgba(23, 105, 255, 0.2);
 }
 
-.button-link:hover {
-text-decoration: underline;
-}
-
-/* Driver Stats */
+/* =========================================
+   DRIVER STATS
+   ========================================= */
 
 .driver-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
 .driver-card {
-background-color: #222;
-border: 1px solid #333;
-border-top: 4px solid #e10600;
-border-radius: 7px;
-padding: 20px;
+    background: #151b24;
+    border: 1px solid #293342;
+    border-top: 4px solid #1769ff;
+    border-radius: 8px;
+    padding: 20px;
+    transition: 0.2s;
+}
+
+.driver-card:hover {
+    border-color: #1769ff;
+    transform: translateY(-2px);
 }
 
 .driver-card h3 {
-margin: 0 0 5px;
-font-size: 1.4rem;
+    margin: 0 0 5px;
+    color: #ffffff;
 }
 
 .driver-team {
-color: #aaa;
-margin-bottom: 18px;
+    color: #8995a5;
+    margin-bottom: 18px;
 }
 
 .stat-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
 .stat {
-background-color: #171717;
-padding: 12px;
-border-radius: 5px;
+    background: #0d1117;
+    border: 1px solid #202936;
+    padding: 12px;
+    border-radius: 5px;
 }
 
 .stat-label {
-display: block;
-color: #888;
-font-size: 0.8rem;
-text-transform: uppercase;
+    display: block;
+    color: #788596;
+    font-size: 0.75rem;
+    text-transform: uppercase;
 }
 
 .stat-value {
-display: block;
-margin-top: 4px;
-font-size: 1.2rem;
-font-weight: bold;
+    display: block;
+    margin-top: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
 }
 
-/* Results */
+/* =========================================
+   STATUS
+   ========================================= */
 
-.race-selector {
-margin-bottom: 25px;
+.completed {
+    color: #45d483;
+    font-weight: bold;
 }
 
-.race-selector label {
-display: block;
-margin-bottom: 8px;
-font-weight: bold;
+.upcoming {
+    color: #4d8dff;
+    font-weight: bold;
 }
 
-.race-selector select {
-width: 100%;
-max-width: 500px;
-padding: 12px;
-background-color: #222;
-color: white;
-border: 1px solid #444;
-border-radius: 5px;
-font-size: 1rem;
+.tbd {
+    color: #8995a5;
 }
 
-.race-title {
-color: #e10600;
-margin-bottom: 5px;
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.button-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #4d8dff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.race-info {
-color: #888;
-margin-top: 0;
+.button-link:hover {
+    color: #ffffff;
 }
+
+/* =========================================
+   FOOTER
+   ========================================= */
 
 footer {
-text-align: center;
-padding: 25px;
-color: #666;
-font-size: 0.9rem;
-border-top: 1px solid #222;
-margin-top: 50px;
+    text-align: center;
+    padding: 25px;
+    color: #687585;
+    border-top: 1px solid #202731;
+    margin-top: 50px;
+    background: #080b10;
 }
+
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 700px) {
-header h1 {
-font-size: 1.8rem;
-}
 
-```
-.nav-button {
-    display: block;
-    margin: 6px auto;
-    max-width: 250px;
-}
+    header h1 {
+        font-size: 1.7rem;
+    }
 
-th,
-td {
-    padding: 8px;
-    font-size: 0.9rem;
-}
-```
+    .nav-button {
+        display: block;
+        max-width: 260px;
+        margin: 6px auto;
+    }
 
-}
+    th,
+    td {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
 
+    .card {
+        padding: 18px;
+    }
+}
