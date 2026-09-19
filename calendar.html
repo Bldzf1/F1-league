@@ -1,27 +1,63 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRL | Race Calendar</title>
-    <link rel="stylesheet" href="style.css">
+
+```
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SRL | Calendar</title>
+
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
 
 <body>
 
 <header>
-    <h1>🏎️ Slipstream Racing League</h1>
-    <p>2026 Season Calendar</p>
+
+```
+<h1>🏎️ Slipstream Racing League</h1>
+
+<p>Race Calendar</p>
+```
+
 </header>
 
 <nav>
-    <a href="index.html" class="nav-button">🏠 Home</a>
-    <a href="driver-stats.html" class="nav-button">👤 Driver Stats</a>
-    <a href="standings.html" class="nav-button">🏆 Standings</a>
-    <a href="calendar.html" class="nav-button active">📅 Calendar</a>
-    <a href="results.html" class="nav-button">🏁 Results</a>
-    <a href="https://discord.gg/2uzj4pkFp" target="_blank" rel="noopener noreferrer" class="nav-button discord-button">💬 Discord</a>
+
+```
+<a href="index.html" class="nav-button">
+    🏠 Home
+</a>
+
+<a href="driver-stats.html" class="nav-button">
+    👤 Driver Stats
+</a>
+
+<a href="standings.html" class="nav-button">
+    🏆 Standings
+</a>
+
+<a href="calendar.html" class="nav-button active">
+    📅 Calendar
+</a>
+
+<a href="results.html" class="nav-button">
+    🏁 Results
+</a>
+
+<a href="https://discord.gg/2uzj4pkFp"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="nav-button discord-button">
+    💬 Discord
+</a>
+```
+
 </nav>
 
 <main>
@@ -29,73 +65,53 @@
 <section class="card">
 
 ```
-<h2>📅 SRL Race Calendar</h2>
+<h2>📅 Race Calendar</h2>
+
+
+<div class="selector">
+
+    <label for="seasonSelect">
+        Select Season
+    </label>
+
+    <select id="seasonSelect">
+
+        <option value="season2">
+            Season 2 — 2026
+        </option>
+
+        <option value="season1">
+            Season 1
+        </option>
+
+    </select>
+
+</div>
+
+
+<h2 id="calendarTitle">
+    Season 2
+</h2>
+
 
 <table>
 
     <thead>
+
         <tr>
+
             <th>Round</th>
             <th>Grand Prix</th>
             <th>Date</th>
             <th>Time</th>
             <th>Status</th>
+
         </tr>
+
     </thead>
 
-    <tbody>
 
-        <!-- EDIT YOUR CALENDAR BELOW -->
-
-        <tr>
-            <td><strong>1</strong></td>
-            <td>Bahrain GP</td>
-            <td>13/09/2026</td>
-            <td>7:00 PM</td>
-            <td class="completed">Completed</td>
-        </tr>
-
-        <tr>
-            <td><strong>2</strong></td>
-            <td>British GP</td>
-            <td>20/09/2026</td>
-            <td>7:00 PM</td>
-            <td class="upcoming">Upcoming</td>
-        </tr>
-
-        <tr>
-            <td><strong>3</strong></td>
-            <td>Belgian GP</td>
-            <td>TBD</td>
-            <td>TBD</td>
-            <td class="tbd">TBD</td>
-        </tr>
-
-        <tr>
-            <td><strong>4</strong></td>
-            <td>Italian GP</td>
-            <td>TBD</td>
-            <td>TBD</td>
-            <td class="tbd">TBD</td>
-        </tr>
-
-        <tr>
-            <td><strong>5</strong></td>
-            <td>Japanese GP</td>
-            <td>TBD</td>
-            <td>TBD</td>
-            <td class="tbd">TBD</td>
-        </tr>
-
-        <tr>
-            <td><strong>6</strong></td>
-            <td>Abu Dhabi GP</td>
-            <td>TBD</td>
-            <td>TBD</td>
-            <td class="tbd">TBD</td>
-        </tr>
-
-    </tbody>
+    <tbody id="calendarTable"></tbody>
 
 </table>
 ```
@@ -108,6 +124,108 @@
     © 2026 Slipstream Racing League (SRL). All Rights Reserved.
 </footer>
 
+<script>
+
+/* =========================================
+   EDIT CALENDAR HERE
+   ========================================= */
+
+const calendars = {
+
+    season2: [
+
+        ["1", "Bahrain GP", "13/09/2026", "7:00 PM", "Completed"],
+
+        ["2", "British GP", "20/09/2026", "7:00 PM", "Upcoming"],
+
+        ["3", "Belgian GP", "TBD", "TBD", "TBD"],
+
+        ["4", "Italian GP", "TBD", "TBD", "TBD"],
+
+        ["5", "Japanese GP", "TBD", "TBD", "TBD"],
+
+        ["6", "Abu Dhabi GP", "TBD", "TBD", "TBD"]
+
+    ],
+
+
+    season1: [
+
+        ["1", "Bahrain GP", "01/06/2026", "7:00 PM", "Completed"],
+
+        ["2", "Saudi Arabian GP", "08/06/2026", "7:00 PM", "Completed"],
+
+        ["3", "Australian GP", "15/06/2026", "7:00 PM", "Completed"],
+
+        ["4", "British GP", "22/06/2026", "7:00 PM", "Completed"]
+
+    ]
+
+};
+
+
+/* =========================================
+   DISPLAY CALENDAR
+   ========================================= */
+
+function showCalendar() {
+
+    const selected =
+        document.getElementById("seasonSelect").value;
+
+    const races =
+        calendars[selected];
+
+    document.getElementById("calendarTitle").textContent =
+        selected === "season2"
+            ? "Season 2"
+            : "Season 1";
+
+    const table =
+        document.getElementById("calendarTable");
+
+    table.innerHTML = "";
+
+    races.forEach(function(race) {
+
+        const row =
+            document.createElement("tr");
+
+        let statusClass = "tbd";
+
+        if (race[4] === "Completed") {
+            statusClass = "completed";
+        }
+
+        if (race[4] === "Upcoming") {
+            statusClass = "upcoming";
+        }
+
+        row.innerHTML = `
+            <td><strong>${race[0]}</strong></td>
+            <td>${race[1]}</td>
+            <td>${race[2]}</td>
+            <td>${race[3]}</td>
+            <td class="${statusClass}">
+                ${race[4]}
+            </td>
+        `;
+
+        table.appendChild(row);
+
+    });
+
+}
+
+
+document
+    .getElementById("seasonSelect")
+    .addEventListener("change", showCalendar);
+
+
+showCalendar();
+
+</script>
+
 </body>
 </html>
-
