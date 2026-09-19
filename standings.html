@@ -4,8 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRL | Championship Standings</title>
-    <link rel="stylesheet" href="style.css">
+
+```
+<title>SRL | Championship Standings</title>
+
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
 
 <body>
@@ -16,17 +21,36 @@
 </header>
 
 <nav>
-    <a href="index.html" class="nav-button">🏠 Home</a>
-    <a href="driver-stats.html" class="nav-button">👤 Driver Stats</a>
-    <a href="standings.html" class="nav-button active">🏆 Standings</a>
-    <a href="calendar.html" class="nav-button">📅 Calendar</a>
-    <a href="results.html" class="nav-button">🏁 Results</a>
-    <a href="https://discord.gg/2uzj4pkFp"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="nav-button discord-button">
-       💬 Discord
-    </a>
+
+```
+<a href="index.html" class="nav-button">
+    🏠 Home
+</a>
+
+<a href="driver-stats.html" class="nav-button">
+    👤 Driver Stats
+</a>
+
+<a href="standings.html" class="nav-button active">
+    🏆 Standings
+</a>
+
+<a href="calendar.html" class="nav-button">
+    📅 Calendar
+</a>
+
+<a href="results.html" class="nav-button">
+    🏁 Results
+</a>
+
+<a href="https://discord.gg/2uzj4pkFp"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="nav-button discord-button">
+    💬 Discord
+</a>
+```
+
 </nav>
 
 <main>
@@ -36,7 +60,8 @@
 ```
 <h2>🏆 Championship Standings</h2>
 
-<!-- SEASON SELECTOR -->
+
+<!-- SEASON DROPDOWN -->
 
 <div class="race-selector">
 
@@ -44,7 +69,7 @@
         Select Season:
     </label>
 
-    <select id="seasonSelect" onchange="showStandings()">
+    <select id="seasonSelect">
 
         <option value="season2">
             Season 2 — 2026
@@ -59,7 +84,7 @@
 </div>
 
 
-<!-- CURRENT SEASON TITLE -->
+<!-- SELECTED SEASON -->
 
 <h2 id="seasonTitle" class="race-title">
     Season 2
@@ -70,7 +95,7 @@
 </p>
 
 
-<!-- STANDINGS TABLE -->
+<!-- STANDINGS -->
 
 <table>
 
@@ -85,8 +110,7 @@
 
     </thead>
 
-    <tbody id="standingsTable">
-    </tbody>
+    <tbody id="standingsTable"></tbody>
 
 </table>
 ```
@@ -101,33 +125,28 @@
 
 <script>
 
-const seasonStandings = {
+/* ==========================================
+   SRL SEASON DATA
+   EDIT THIS SECTION
+   ========================================== */
 
-    /* =========================
-       SEASON 2
-       ========================= */
+const seasonStandings = {
 
     season2: {
 
         title: "Season 2",
+
         info: "2026 Championship",
 
         drivers: [
 
             ["1", "Driver_One", "Red Bull", "25"],
-
             ["2", "Driver_Two", "Ferrari", "18"],
-
             ["3", "Driver_Three", "Mercedes", "15"],
-
             ["4", "Driver_Four", "McLaren", "12"],
-
             ["5", "Driver_Five", "Aston Martin", "10"],
-
             ["6", "Driver_Six", "Williams", "8"],
-
             ["7", "Driver_Seven", "Alpine", "6"],
-
             ["8", "Driver_Eight", "Haas", "4"]
 
         ]
@@ -135,31 +154,21 @@ const seasonStandings = {
     },
 
 
-    /* =========================
-       SEASON 1
-       ========================= */
-
     season1: {
 
         title: "Season 1",
+
         info: "SRL Season 1 Championship",
 
         drivers: [
 
             ["1", "Driver_One", "Red Bull", "150"],
-
             ["2", "Driver_Two", "Ferrari", "132"],
-
             ["3", "Driver_Three", "McLaren", "118"],
-
             ["4", "Driver_Four", "Mercedes", "105"],
-
             ["5", "Driver_Five", "Aston Martin", "94"],
-
             ["6", "Driver_Six", "Williams", "82"],
-
             ["7", "Driver_Seven", "Alpine", "71"],
-
             ["8", "Driver_Eight", "Haas", "60"]
 
         ]
@@ -169,45 +178,36 @@ const seasonStandings = {
 };
 
 
-/* =========================
-   DISPLAY STANDINGS
-   ========================= */
+/* ==========================================
+   CHANGE THE TABLE
+   ========================================== */
 
 function showStandings() {
 
     const selectedSeason =
         document.getElementById("seasonSelect").value;
 
+
     const season =
         seasonStandings[selectedSeason];
 
-
-    /* Change title */
 
     document.getElementById("seasonTitle").textContent =
         season.title;
 
 
-    /* Change subtitle */
-
     document.getElementById("seasonInfo").textContent =
         season.info;
 
-
-    /* Get table */
 
     const table =
         document.getElementById("standingsTable");
 
 
-    /* Clear old standings */
-
     table.innerHTML = "";
 
 
-    /* Add drivers */
-
-    season.drivers.forEach(driver => {
+    season.drivers.forEach(function(driver) {
 
         const row =
             document.createElement("tr");
@@ -228,7 +228,18 @@ function showStandings() {
 }
 
 
-/* Load Season 2 automatically */
+/* ==========================================
+   WHEN DROPDOWN CHANGES
+   ========================================== */
+
+document
+    .getElementById("seasonSelect")
+    .addEventListener("change", showStandings);
+
+
+/* ==========================================
+   LOAD DEFAULT SEASON
+   ========================================== */
 
 showStandings();
 
