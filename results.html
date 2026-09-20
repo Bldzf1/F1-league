@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SRL | Championship Results</title>
+    <title>SRL | Socials</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -20,7 +20,7 @@
 
     <h1>SLIPSTREAM RACING LEAGUE</h1>
 
-    <p>Championship Statistics</p>
+    <p>Follow SRL • Stay Connected • Never Miss a Race</p>
 
 </header>
 
@@ -44,7 +44,7 @@
     </a>
 
     <a href="results.html" class="nav-button active">
-        🏁 Results
+        📱 Socials
     </a>
 
     <a href="https://discord.gg/2uzj4pkFp"
@@ -59,79 +59,109 @@
 
 <main>
 
-    <section class="card">
+    <section class="card hero">
 
-        <h2>🏆 Championship Results</h2>
+        <h2>📱 Follow SRL</h2>
 
-        <div class="selector">
-
-            <label for="seasonSelect">
-                Select Season
-            </label>
-
-            <select id="seasonSelect">
-
-                <option value="season1">
-                    Season 1
-                </option>
-
-                <option value="season2">
-                    Season 2
-                </option>
-
-            </select>
-
-        </div>
+        <p>
+            Keep up with the latest Slipstream Racing League news,
+            race highlights, announcements and content across our
+            social media platforms.
+        </p>
 
     </section>
 
 
+    <div class="two-column">
+
+        <section class="card column">
+
+            <h2>🎥 TikTok</h2>
+
+            <p>
+                Watch SRL race clips, highlights, funny moments,
+                overtakes and more.
+            </p>
+
+            <a href="#"
+               class="nav-button">
+                🎥 Follow on TikTok →
+            </a>
+
+        </section>
+
+
+        <section class="card column">
+
+            <h2>▶️ YouTube</h2>
+
+            <p>
+                Watch full races, highlights, league content
+                and SRL videos.
+            </p>
+
+            <a href="#"
+               class="nav-button">
+                ▶️ Subscribe on YouTube →
+            </a>
+
+        </section>
+
+
+        <section class="card column">
+
+            <h2>🟣 Twitch</h2>
+
+            <p>
+                Watch SRL races live, follow the action and
+                catch our league broadcasts.
+            </p>
+
+            <a href="#"
+               class="nav-button">
+                🟣 Follow on Twitch →
+            </a>
+
+        </section>
+
+
+        <section class="card column">
+
+            <h2>💬 Discord</h2>
+
+            <p>
+                Join the SRL community, sign up for races,
+                chat with drivers and get league announcements.
+            </p>
+
+            <a href="https://discord.gg/2uzj4pkFp"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="nav-button discord-button">
+                💬 Join the Discord →
+            </a>
+
+        </section>
+
+    </div>
+
+
     <section class="card">
 
-        <h2>🏎️ Drivers' Championship</h2>
+        <h2>🤝 Join the SRL Community</h2>
 
-        <table>
+        <p>
+            Want to race with us? Join the official SRL Discord
+            to find out about upcoming races, applications,
+            announcements and more.
+        </p>
 
-            <thead>
-
-                <tr>
-                    <th>Pos</th>
-                    <th>Driver</th>
-                    <th>Wins</th>
-                    <th>Podiums</th>
-                </tr>
-
-            </thead>
-
-            <tbody id="driversTable">
-            </tbody>
-
-        </table>
-
-    </section>
-
-
-    <section class="card">
-
-        <h2>🏁 Constructors' Championship</h2>
-
-        <table>
-
-            <thead>
-
-                <tr>
-                    <th>Pos</th>
-                    <th>Team</th>
-                    <th>Wins</th>
-                    <th>Podiums</th>
-                </tr>
-
-            </thead>
-
-            <tbody id="constructorsTable">
-            </tbody>
-
-        </table>
+        <a href="https://discord.gg/2uzj4pkFp"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="nav-button discord-button">
+            💬 Join SRL Discord →
+        </a>
 
     </section>
 
@@ -144,120 +174,6 @@
 
 </footer>
 
-
-<script>
-
-const championshipData = {
-
-    season1: {
-
-        drivers: [
-
-            ["1", "Driver One", "4", "7"],
-            ["2", "Driver Two", "2", "5"],
-            ["3", "Driver Three", "1", "4"]
-
-        ],
-
-        constructors: [
-
-            ["1", "Team One", "5", "10"],
-            ["2", "Team Two", "3", "8"],
-            ["3", "Team Three", "2", "6"]
-
-        ]
-
-    },
-
-
-    season2: {
-
-        drivers: [
-
-            ["1", "Driver One", "0", "0"],
-            ["2", "Driver Two", "0", "0"],
-            ["3", "Driver Three", "0", "0"]
-
-        ],
-
-        constructors: [
-
-            ["1", "Team One", "0", "0"],
-            ["2", "Team Two", "0", "0"],
-            ["3", "Team Three", "0", "0"]
-
-        ]
-
-    }
-
-};
-
-
-function showChampionship() {
-
-    const selectedSeason =
-        document.getElementById("seasonSelect").value;
-
-    const data =
-        championshipData[selectedSeason];
-
-
-    const driversTable =
-        document.getElementById("driversTable");
-
-    driversTable.innerHTML = "";
-
-
-    data.drivers.forEach(function(driver) {
-
-        const row =
-            document.createElement("tr");
-
-        row.innerHTML = `
-            <td><strong>${driver[0]}</strong></td>
-            <td>${driver[1]}</td>
-            <td>${driver[2]}</td>
-            <td>${driver[3]}</td>
-        `;
-
-        driversTable.appendChild(row);
-
-    });
-
-
-    const constructorsTable =
-        document.getElementById("constructorsTable");
-
-    constructorsTable.innerHTML = "";
-
-
-    data.constructors.forEach(function(team) {
-
-        const row =
-            document.createElement("tr");
-
-        row.innerHTML = `
-            <td><strong>${team[0]}</strong></td>
-            <td>${team[1]}</td>
-            <td>${team[2]}</td>
-            <td>${team[3]}</td>
-        `;
-
-        constructorsTable.appendChild(row);
-
-    });
-
-}
-
-
-document
-    .getElementById("seasonSelect")
-    .addEventListener("change", showChampionship);
-
-
-showChampionship();
-
-</script>
 
 </body>
 
